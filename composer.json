@@ -1,0 +1,23 @@
+{
+    "name": "m4ur1c10/flashphoner-api-php",
+    "description": "API Unofficial to use WCS API FlashPhoner",
+    "type": "library",
+    "version": "dev-0.0.1",
+    "autoload": {
+        "psr-4": {
+                "FlashPhonerAPI\\": "src/"
+            }
+        },
+    "require": {
+        "guzzlehttp/guzzle": "^7.2",
+        "psr/http-message": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mauricio Machado",
+            "email": "mauriciomach.gps@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
