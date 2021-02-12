@@ -18,11 +18,11 @@ class StreamService extends Service
     }
 
     public function terminate($data = FALSE) {
-        $this->callApi("terminate", $data);
+        $this->callApi("terminate", ['json' => $data]);
     }
 
     public function snapshot($data = FALSE) {
-        return json_decode($this->callApi("snapshot", $data));
+        return json_decode($this->callApi("snapshot", ['json' => $data]));
     }
 
     public function startRecording($data = FALSE) {

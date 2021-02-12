@@ -15,7 +15,8 @@ class Service
 
     public function __construct(Config $config) {
         $this->client = new API([
-            "base_uri" => $config->getEndpoint()
+            "base_uri" => $config->getEndpoint(),
+            'verify' => false
         ]);
     }
 
