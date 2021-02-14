@@ -28,5 +28,14 @@ class Call {
     public $isMsrp;
     public $target;
     public $holdForTransfer;
+
+    public function __construct($props = []) {
+        foreach($props as $prop => $val) {
+            // echo $prop.":".(property_exists($this, $prop) ? 'sim' : 'nao')."\n";
+            if (property_exists($this, $prop)) {
+                $this->{$prop} = $val;
+            }
+        }
+    }
     
 }

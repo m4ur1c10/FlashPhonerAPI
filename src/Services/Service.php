@@ -20,7 +20,7 @@ class Service
         ]);
     }
 
-    protected function callApi($url_final, $data) {
+    protected function callAPI($url_final, $data = []) {
 
         $url = $this->service_uri . $url_final;
         try {
@@ -31,12 +31,15 @@ class Service
             }
 
             $body = $response->getBody();
-            // Implicitly cast the body to a string and echo it
+            if ($response->getStatusCode() >= 400) {
+                $bodyJson = json_decode($body);
+                throw new FlashPhonerException($bodyJson->message, $bodyJson->status);
+            }
             return $body;
         } catch (RequestException $ex) {
             $resp = $ex->getResponse();
             $err = json_decode((string) $resp->getBody());
-            throw new \Exception($err->message);
+            throw new FlashPhonerException($err->message, 0);
         }
 
     }
