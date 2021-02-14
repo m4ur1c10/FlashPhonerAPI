@@ -4,7 +4,7 @@ namespace FlashPhonerAPI\Services;
 
 use FlashPhonerAPI\Http\API;
 use FlashPhonerAPI\Config;
-
+use FlashPhonerAPI\Exception\FlashPhonerException;
 use GuzzleHttp\Exception\RequestException;
 
 class Service
