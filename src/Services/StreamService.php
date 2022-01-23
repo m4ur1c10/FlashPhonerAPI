@@ -14,7 +14,7 @@ class StreamService extends Service
     }
 
     public function find($data = FALSE) {
-        return json_decode($this->callApi("find", $data));
+        return json_decode($this->callApi("find", ['json' => $data]));
     }
 
     public function terminate($data = FALSE) {
